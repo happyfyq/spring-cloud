@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server.com:8091/eureka/ # 将本应用注册到注册中心里面，这里的地址就是我们在注册中配置的注册中心的地址
+  instance: 
+    hostname: eureka.client.ribbonHystrix.com
+server: 
+  port: 8095 #本应用接口
+spring:
+  application:
+    name: service-ribbonHystrix  #配置本应用的名字，这是很重要的，在服务注册和发现的时候都要用到

@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server.com:8091/eureka/
+  instance: 
+    hostname: eureka.client.feignHystrix.com   
+server:
+  port: 8096
+spring:
+  application:
+    name: service-feignHystrix
+    
+# 如果feign不想是用断路器在再次设置为false即可，本例子是测试feign的，所以开启
+#feign:
+  #hystrix: 
+    #enabled: false    

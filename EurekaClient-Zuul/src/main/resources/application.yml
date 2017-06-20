@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server.com:8091/eureka/
+  instance: 
+    hostname: eureka.client.zuul.com   
+server:
+  port: 8097
+spring:
+  application:
+    name: service-zuul
+
+#；以/api-a/ 开头的请求都指向service-consumer；以/api-b/开头的请求都指向service-consumer2；
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-consumer
+    api-b:
+      path: /api-b/**
+      serviceId: service-consumer2
